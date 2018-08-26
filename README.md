@@ -30,6 +30,9 @@ Using eBPF maps is a method to keep state between invocations of the eBPF progra
 - https://github.com/pmem/vltrace
 
 **Go + eBPF:**
+ - comparison: https://github.com/newtools/ebpf/issues/54
+- https://github.com/iovisor/gobpf
+- https://github.com/andrewkroh/go-ebpf
 - https://github.com/newtools/ebpf
 
 **eBPF with autocomplete**
