@@ -1,17 +1,31 @@
 # bpf-notes
 
 
+- [A thorough introduction to eBPF](https://lwn.net/Articles/740157/) 
+- [BPF and XDP Reference Guide](https://github.com/cilium/cilium/blob/master/Documentation/bpf.rst)
+- eBPF maps: Using eBPF maps is a method to keep state between invocations of the eBPF program, and allows sharing data between eBPF kernel programs, and also between kernel and user-space applications.
+  - [eBPF maps](https://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps.html)
+  - [Types of eBPF maps](https://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps_types.html)
+- [bpf man page](http://man7.org/linux/man-pages/man2/bpf.2.html)
+- [Persistent BPF objects](https://lwn.net/Articles/664688/)
 
-- http://cilium.readthedocs.io/en/latest/bpf/
-- https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/
-- https://blog.cloudflare.com/bpf-the-forgotten-bytecode/
-- https://blog.cloudflare.com/introducing-the-bpf-tools/
-- https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/
+## Go + eBPF
+- https://github.com/iovisor/gobpf
+- https://github.com/andrewkroh/go-ebpf
+- https://github.com/newtools/ebpf
+- comparison: https://github.com/newtools/ebpf/issues/54
+- projects on Github: https://github.com/topics/ebpf
+
+
+---
+
+
+- [Dive into BPF: a list of reading material](https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/)
+- [How to filter packets super fast: XDP & eBPF!](https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/)
 
 
 ## BPF map
 
-Using eBPF maps is a method to keep state between invocations of the eBPF program, and allows sharing data between eBPF kernel programs, and also between kernel and user-space applications.
 
 - http://man7.org/linux/man-pages/man2/bpf.2.html
 
@@ -24,9 +38,6 @@ Using eBPF maps is a method to keep state between invocations of the eBPF progra
 **Notes**
 - This also implies that API users must clear/zero sizeof(bpf_attr), as compiler can size-align the struct differently, to avoid garbage data to be interpreted as parameters by future kernels.
 
-**eBPF projects on Github:**
-- https://github.com/topics/ebpf
-
 **eBPF + Prometheus:**
 - https://github.com/cloudflare/ebpf_exporter
 - https://github.com/dswarbrick/ebpf_exporter
@@ -36,12 +47,6 @@ Using eBPF maps is a method to keep state between invocations of the eBPF progra
 
 **Tracing syscalls using eBPF using tracepoints**
 - https://github.com/pmem/vltrace
-
-**Go + eBPF:**
- - comparison: https://github.com/newtools/ebpf/issues/54
-- https://github.com/iovisor/gobpf
-- https://github.com/andrewkroh/go-ebpf
-- https://github.com/newtools/ebpf
 
 **eBPF with autocomplete**
 - https://ops.tips/blog/developing-ebpf-with-autocompletion-support/
