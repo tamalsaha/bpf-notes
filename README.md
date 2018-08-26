@@ -40,6 +40,7 @@ Traditionally, BPF could only be attached to sockets for socket filtering. BPF's
 - [XDP based load balancer with L3DSR support](https://gist.github.com/summerwind/080750455a396a1b1ba78938b3178f6b)
 - [Drop incoming packets on XDP layer and count for which protocol type](https://github.com/iovisor/gobpf/blob/master/examples/bcc/xdp/xdp_drop.go)
 - [XDP Production Usage: DDoS Protection and L4LB](https://github.com/tamalsaha/bpf-notes/blob/master/papers/zhou-netdev-xdp-2017.pdf)
+- [Network filtering for control groups](https://lwn.net/Articles/698073/)
 
 ## L7 in Kernel
 - [New approaches to network fast paths](https://lwn.net/Articles/719850/)
