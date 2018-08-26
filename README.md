@@ -1,6 +1,14 @@
 # bpf-notes
 
 
+
+- http://cilium.readthedocs.io/en/latest/bpf/
+- https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/
+- https://blog.cloudflare.com/bpf-the-forgotten-bytecode/
+- https://blog.cloudflare.com/introducing-the-bpf-tools/
+- https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/
+
+
 ## BPF map
 
 Using eBPF maps is a method to keep state between invocations of the eBPF program, and allows sharing data between eBPF kernel programs, and also between kernel and user-space applications.
