@@ -99,5 +99,12 @@ https://docs.google.com/a/covalent.io/presentation/d/1dwS...
 **Accelerating Linux security with eBPF iptables**
 https://twitter.com/sebymiano/status/1027164445448069120?s=19
 
+## perf_events
+- http://web.eece.maine.edu/~vweaver/projects/perf_events/
+- http://www.brendangregg.com/perf.html
+
+- Tracepoints (stable): https://www.kernel.org/doc/Documentation/trace/tracepoints.txt
+- kprobe (unstable): bpf  
+
 
 
