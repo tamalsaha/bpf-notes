@@ -1,4 +1,8 @@
-**Kprobe** - [https://lwn.net/Articles/132196/](https://lwn.net/Articles/132196/) 
+# perf-tools
+
+## Kprobe
+
+- [https://lwn.net/Articles/132196/](https://lwn.net/Articles/132196/) 
 
 KProbes is a debugging mechanism for the Linux kernel which can also be used for monitoring events inside a production system.
 
@@ -8,34 +12,7 @@ Uprobe:
 
 [http://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html](http://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html) 
 
-**eBPF**
 
-Traditionally, BPF could only be attached to sockets for socket filtering. BPF's first use case was in `tcpdump`. When you run `tcpdump` the filter is compiled into a BPF program and attached to a raw `AF_PACKET` socket in order to print out filtered packets.
-
-But over the years, eBPF added the ability to attach to [other kernel objects](https://github.com/torvalds/linux/blob/v4.14/include/uapi/linux/bpf.h#L117-L133). In addition to socket filtering, some supported attach points are:
-
-
-
-*   Kprobes (and userspace equivalents uprobes)
-*   Tracepoints
-*   Network schedulers or qdiscs for classification or action (tc)
-*   XDP (eXpress Data Path) This and other, newer features like in-kernel helper functions and shared data-structures (maps) that can be used to communicate with user space, extend BPF's capabilities.
-*   
-
-[A thorough introduction to eBPF](https://lwn.net/Articles/740157/) 
-
-**BPF + Kubernetes :** [https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/](https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/) 
-
-![alt_text](images/bpf-prog-types.png "types of bpf programs")
-
----
-
-![alt_text](images/bpf-ci.png "using ci with bpf")
-
-[http://brendangregg.com/perf.html#eBPF](http://brendangregg.com/perf.html#eBPF)
-
-
-```
 Kernel Auditing as Scale
 
 Falco - Kernel Module
@@ -58,8 +35,6 @@ Yes, more or less. There are bunch of different "tracing" mechanisms in the kern
 Why Falco is unsafe? It loads kernel module.
 
 https://stackoverflow.com/questions/1565323/linux-kernel-modules-security-risk
-
-```
 
 
 
