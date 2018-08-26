@@ -1,0 +1,138 @@
+**Kprobe** - [https://lwn.net/Articles/132196/](https://lwn.net/Articles/132196/) 
+
+KProbes is a debugging mechanism for the Linux kernel which can also be used for monitoring events inside a production system.
+
+JProbes are used to get access to a kernel function's arguments at runtime.
+
+Uprobe:
+
+[http://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html](http://www.brendangregg.com/blog/2015-06-28/linux-ftrace-uprobe.html) 
+
+**eBPF**
+
+Traditionally, BPF could only be attached to sockets for socket filtering. BPF's first use case was in `tcpdump`. When you run `tcpdump` the filter is compiled into a BPF program and attached to a raw `AF_PACKET` socket in order to print out filtered packets.
+
+But over the years, eBPF added the ability to attach to [other kernel objects](https://github.com/torvalds/linux/blob/v4.14/include/uapi/linux/bpf.h#L117-L133). In addition to socket filtering, some supported attach points are:
+
+
+
+*   Kprobes (and userspace equivalents uprobes)
+*   Tracepoints
+*   Network schedulers or qdiscs for classification or action (tc)
+*   XDP (eXpress Data Path) This and other, newer features like in-kernel helper functions and shared data-structures (maps) that can be used to communicate with user space, extend BPF's capabilities.
+*   
+
+[A thorough introduction to eBPF](https://lwn.net/Articles/740157/) 
+
+**BPF + Kubernetes :** [https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/](https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/) 
+
+
+
+<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Kernel-development0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/Kernel-development0.png "image_tooltip")
+
+
+
+
+---
+
+
+
+
+<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Kernel-development1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
+
+
+![alt_text](images/Kernel-development1.png "image_tooltip")
+
+
+[http://brendangregg.com/perf.html#eBPF](http://brendangregg.com/perf.html#eBPF)
+
+
+```
+Kernel Auditing as Scale
+
+Falco - Kernel Module
+
+BPF - 
+http://www.brendangregg.com/Slides/BSidesSF2017_BPF_security_monitoring.pdf 
+
+Auditd - 
+https://news.ycombinator.com/item?id=13010544 
+
+https://slack.engineering/syscall-auditing-at-scale-e6a3ca8ac1b8
+
+As the kind-of-sort-of maintainer of Linux's syscall infrastructure on x86, I have a public service announcement: the syscall auditing infrastructure is awful.
+It is inherently buggy in numerous ways. It hardcodes the number of arguments a syscall has incorrectly. It screws up compat handling. It doesn't robustly match entries to returns. It has an utterly broken approach to handling x32 syscalls. It has terrifying code that does bizarre things involving path names (!). It doesn't handle containerization sensibly at all. I wouldn't be at all surprised if it contains major root holes. And last, but certainly not least, it's eminently clear that no one stress tests it.
+If you really want to use it for production, invest the effort to fix it, please. (And cc me.) Otherwise do yourself a favor and stay away from it. Use the syscall tracing infrastructure instead.
+
+Yes, more or less. There are bunch of different "tracing" mechanisms in the kernel, and perf trace is the common way to use it. Syscalls trigger tracepoints, and anything that can see tracepoints can see them. Using eBPF to trace syscalls is probably quite useful.
+
+
+Why Falco is unsafe? It loads kernel module.
+
+https://stackoverflow.com/questions/1565323/linux-kernel-modules-security-risk
+
+```
+
+
+
+```
+What is XDP
+
+https://www.iovisor.org/technology/xdp
+
+
+http://prototype-kernel.readthedocs.io/en/latest/networking/XDP/introduction.html
+
+
+XDP LB ebpf
+https://gist.github.com/summerwind/080750455a396a1b1ba78938b3178f6b 
+
+Xdp_ drop using ebpf
+https://github.com/iovisor/gobpf/blob/master/examples/bcc/xdp/xdp_drop.go
+
+
+FB xdp - LB
+https://drive.google.com/open?id=1EAUsfpMOWfisllfsz6CTXV1j6jJ5qnie 
+
+```
+
+
+
+```
+Examples of ebpf
+
+http://cilium.readthedocs.io/en/latest/bpf/#projects-using-bpf 
+```
+
+
+
+```
+L7 in Kernel
+https://lwn.net/Articles/719850/
+
+Kproxy : https://www.youtube.com/watch?v=CcGtDMm1SJA&feature=youtu.be&t=30m15s
+
+Perf ring buffer: https://lwn.net/Articles/388978/ 
+
+Kproxy
+https://lwn.net/Articles/726811/
+
+
+kTLS
+https://lwn.net/Articles/666509/
+
+https://lwn.net/Articles/665602/
+
+https://blog.filippo.io/playing-with-kernel-tls-in-linux-4-13-and-go/
+
+```
+
+
+
+```
+BPF + Kubernetes
+https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/
+```
