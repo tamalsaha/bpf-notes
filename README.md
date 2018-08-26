@@ -127,7 +127,7 @@ https://docs.google.com/a/covalent.io/presentation/d/1dwS...
 - https://marc.info/?l=linux-netdev&m=153227240330693&w=2
 
 **Accelerating Linux security with eBPF iptables**
-https://twitter.com/sebymiano/status/1027164445448069120?s=19
+- https://twitter.com/sebymiano/status/1027164445448069120?s=19
 
 **eBPF with autocomplete**
 - https://ops.tips/blog/developing-ebpf-with-autocompletion-support/
