@@ -1,5 +1,16 @@
 # bpf-notes
 
+Traditionally, BPF could only be attached to sockets for socket filtering. BPF's first use case was in `tcpdump`. When you run `tcpdump` the filter is compiled into a BPF program and attached to a raw `AF_PACKET` socket in order to print out filtered packets.
+
+But over the years, eBPF added the ability to attach to [other kernel objects](https://github.com/torvalds/linux/blob/v4.14/include/uapi/linux/bpf.h#L117-L133). In addition to socket filtering, some supported attach points are:
+
+*   Kprobes (and userspace equivalents uprobes)
+*   Tracepoints
+*   Network schedulers or qdiscs for classification or action (tc)
+*   XDP (eXpress Data Path) This and other, newer features like in-kernel helper functions and shared data-structures (maps) that can be used to communicate with user space, extend BPF's capabilities.
+
+<img src="images/bpf-prog-types.png" width="65%" height="65%">
+
 - [A thorough introduction to eBPF](https://lwn.net/Articles/740157/) 
 - [BPF and XDP Reference Guide](https://github.com/cilium/cilium/blob/master/Documentation/bpf.rst)
 - eBPF maps: Using eBPF maps is a method to keep state between invocations of the eBPF program, and allows sharing data between eBPF kernel programs, and also between kernel and user-space applications.
@@ -7,7 +18,6 @@
   - [Types of eBPF maps](https://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps_types.html)
   - [`bpf_map_get_next_key` pitfalls](https://www.bouncybouncy.net/blog/bpf_map_get_next_key-pitfalls/)
 - [Persistent BPF objects](https://lwn.net/Articles/664688/)
-- [Video: High-performance Linux monitoring with eBPF](https://www.youtube.com/watch?v=uTTFUpT0Sfw)
 - [Using eBPF in Kubernetes](https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/)
 - Kernel docs
   - [BPF(2) man page](http://man7.org/linux/man-pages/man2/bpf.2.html)
@@ -20,12 +30,42 @@
 - comparison: https://github.com/newtools/ebpf/issues/54
 - projects on Github: https://github.com/topics/ebpf
 
+## Testing eBPF in CI
+
+- [Video: High-performance Linux monitoring with eBPF](https://www.youtube.com/watch?v=uTTFUpT0Sfw)
+
+<img src="images/bpf-ci.png" width="50%" height="50%">
+
+
+
+
+
+
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
 
 - [Dive into BPF: a list of reading material](https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/)
 - [How to filter packets super fast: XDP & eBPF!](https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/)
+- [http://brendangregg.com/perf.html#eBPF](http://brendangregg.com/perf.html#eBPF)
+
 
 
 **Notes**
