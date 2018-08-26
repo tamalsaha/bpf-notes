@@ -66,5 +66,5 @@ Falco - Kernel Module. Why Falco is unsafe? It loads kernel module.
 
 https://stackoverflow.com/questions/1565323/linux-kernel-modules-security-risk
 
-
+- [Tracing syscalls using eBPF using tracepoints](https://github.com/pmem/vltrace)
 
