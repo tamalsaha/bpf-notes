@@ -26,26 +26,11 @@ But over the years, eBPF added the ability to attach to [other kernel objects](h
 
 **BPF + Kubernetes :** [https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/](https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/) 
 
-
-
-<p id="gdcalert1" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Kernel-development0.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert2">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Kernel-development0.png "image_tooltip")
-
-
-
+![alt_text](images/bpf-prog-types.png "types of bpf programs")
 
 ---
 
-
-
-
-<p id="gdcalert2" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/Kernel-development1.png). Store image on your image server and adjust path/filename if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert3">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/Kernel-development1.png "image_tooltip")
-
+![alt_text](images/bpf-ci.png "using ci with bpf")
 
 [http://brendangregg.com/perf.html#eBPF](http://brendangregg.com/perf.html#eBPF)
 
