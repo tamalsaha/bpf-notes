@@ -7,6 +7,7 @@
   - [Types of eBPF maps](https://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps_types.html)
   - [`bpf_map_get_next_key` pitfalls](https://www.bouncybouncy.net/blog/bpf_map_get_next_key-pitfalls/)
 - [Persistent BPF objects](https://lwn.net/Articles/664688/)
+- [Video: High-performance Linux monitoring with eBPF](https://www.youtube.com/watch?v=uTTFUpT0Sfw)
 - [Using eBPF in Kubernetes](https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/)
 - Kernel docs
   - [BPF(2) man page](http://man7.org/linux/man-pages/man2/bpf.2.html)
@@ -27,25 +28,14 @@
 - [How to filter packets super fast: XDP & eBPF!](https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/)
 
 
-## BPF map
-
-
-- http://man7.org/linux/man-pages/man2/bpf.2.html
-
-- https://lwn.net/Articles/664688/
-
-- http://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps.html
-
-- BPF in Kernel docs: https://elixir.bootlin.com/linux/latest/source/Documentation/networking/filter.txt
-
 **Notes**
 - This also implies that API users must clear/zero sizeof(bpf_attr), as compiler can size-align the struct differently, to avoid garbage data to be interpreted as parameters by future kernels.
 
-**eBPF + Prometheus:**
+## eBPF + Prometheus exporter
 - https://github.com/cloudflare/ebpf_exporter
 - https://github.com/dswarbrick/ebpf_exporter
 
-**eBPF VM in userspace:**
+## eBPF VM in userspace
 - https://github.com/iovisor/ubpf/
 
 **Tracing syscalls using eBPF using tracepoints**
