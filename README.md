@@ -1,8 +1,6 @@
 # bpf-notes
 
-Traditionally, BPF could only be attached to sockets for socket filtering. BPF's first use case was in `tcpdump`. When you run `tcpdump` the filter is compiled into a BPF program and attached to a raw `AF_PACKET` socket in order to print out filtered packets.
-
-But over the years, eBPF added the ability to attach to [other kernel objects](https://github.com/torvalds/linux/blob/v4.14/include/uapi/linux/bpf.h#L117-L133). In addition to socket filtering, some supported attach points are:
+Traditionally, BPF could only be attached to sockets for socket filtering. BPF's first use case was in `tcpdump`. When you run `tcpdump` the filter is compiled into a BPF program and attached to a raw `AF_PACKET` socket in order to print out filtered packets. But over the years, eBPF added the ability to attach to [other kernel objects](https://github.com/torvalds/linux/blob/v4.14/include/uapi/linux/bpf.h#L117-L133). In addition to socket filtering, some supported attach points are:
 
 *   Kprobes (and userspace equivalents uprobes)
 *   Tracepoints
