@@ -148,31 +148,3 @@ https://docs.google.com/a/covalent.io/presentation/d/1dwS...
 **Accelerating Linux security with eBPF iptables**
 https://twitter.com/sebymiano/status/1027164445448069120?s=19
 
-## perf_events
-- http://web.eece.maine.edu/~vweaver/projects/perf_events/
-- http://www.brendangregg.com/perf.html
-
-- Tracepoints (stable): https://www.kernel.org/doc/Documentation/trace/tracepoints.txt
-- kprobe (unstable): bpf  
-
-
-## Kernel Auditing as Scale
-
-BPF - 
-http://www.brendangregg.com/Slides/BSidesSF2017_BPF_security_monitoring.pdf 
-
-Auditd - 
-https://news.ycombinator.com/item?id=13010544 
-
-https://slack.engineering/syscall-auditing-at-scale-e6a3ca8ac1b8
-
-As the kind-of-sort-of maintainer of Linux's syscall infrastructure on x86, I have a public service announcement: the syscall auditing infrastructure is awful.
-It is inherently buggy in numerous ways. It hardcodes the number of arguments a syscall has incorrectly. It screws up compat handling. It doesn't robustly match entries to returns. It has an utterly broken approach to handling x32 syscalls. It has terrifying code that does bizarre things involving path names (!). It doesn't handle containerization sensibly at all. I wouldn't be at all surprised if it contains major root holes. And last, but certainly not least, it's eminently clear that no one stress tests it.
-If you really want to use it for production, invest the effort to fix it, please. (And cc me.) Otherwise do yourself a favor and stay away from it. Use the syscall tracing infrastructure instead.
-
-Yes, more or less. There are bunch of different "tracing" mechanisms in the kernel, and perf trace is the common way to use it. Syscalls trigger tracepoints, and anything that can see tracepoints can see them. Using eBPF to trace syscalls is probably quite useful.
-
-Falco - Kernel Module. Why Falco is unsafe? It loads kernel module.
-
-https://stackoverflow.com/questions/1565323/linux-kernel-modules-security-risk
-
