@@ -1,13 +1,15 @@
 # bpf-notes
 
-
 - [A thorough introduction to eBPF](https://lwn.net/Articles/740157/) 
 - [BPF and XDP Reference Guide](https://github.com/cilium/cilium/blob/master/Documentation/bpf.rst)
 - eBPF maps: Using eBPF maps is a method to keep state between invocations of the eBPF program, and allows sharing data between eBPF kernel programs, and also between kernel and user-space applications.
   - [eBPF maps](https://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps.html)
   - [Types of eBPF maps](https://prototype-kernel.readthedocs.io/en/latest/bpf/ebpf_maps_types.html)
-- [bpf man page](http://man7.org/linux/man-pages/man2/bpf.2.html)
 - [Persistent BPF objects](https://lwn.net/Articles/664688/)
+- [Using eBPF in Kubernetes](https://kubernetes.io/blog/2017/12/using-ebpf-in-kubernetes/)
+- Kernel docs
+  - [BPF(2) man page](http://man7.org/linux/man-pages/man2/bpf.2.html)
+  - [Linux Socket Filtering aka Berkeley Packet Filter (BPF)](https://github.com/torvalds/linux/blob/master/Documentation/networking/filter.txt)
 
 ## Go + eBPF
 - https://github.com/iovisor/gobpf
@@ -125,8 +127,6 @@ https://twitter.com/sebymiano/status/1027164445448069120?s=19
 
 ## Kernel Auditing as Scale
 
-Falco - Kernel Module
-
 BPF - 
 http://www.brendangregg.com/Slides/BSidesSF2017_BPF_security_monitoring.pdf 
 
@@ -141,8 +141,7 @@ If you really want to use it for production, invest the effort to fix it, please
 
 Yes, more or less. There are bunch of different "tracing" mechanisms in the kernel, and perf trace is the common way to use it. Syscalls trigger tracepoints, and anything that can see tracepoints can see them. Using eBPF to trace syscalls is probably quite useful.
 
-
-Why Falco is unsafe? It loads kernel module.
+Falco - Kernel Module. Why Falco is unsafe? It loads kernel module.
 
 https://stackoverflow.com/questions/1565323/linux-kernel-modules-security-risk
 
