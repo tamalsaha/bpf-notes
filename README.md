@@ -36,37 +36,27 @@ But over the years, eBPF added the ability to attach to [other kernel objects](h
 
 <img src="images/bpf-ci.png" width="50%" height="50%">
 
+## XDP
 
+- [What is XDP?](http://prototype-kernel.readthedocs.io/en/latest/networking/XDP/introduction.html)
+- [XDP based load balancer with L3DSR support](https://gist.github.com/summerwind/080750455a396a1b1ba78938b3178f6b)
+- [Drop incoming packets on XDP layer and count for which protocol type](https://github.com/iovisor/gobpf/blob/master/examples/bcc/xdp/xdp_drop.go)
+- [XDP Production Usage: DDoS Protection and L4LB](https://github.com/tamalsaha/bpf-notes/blob/master/papers/zhou-netdev-xdp-2017.pdf)
 
+## L7 in Kernel
+- [New approaches to network fast paths](https://lwn.net/Articles/719850/)
+- kproxy
+  - [Kproxy](https://www.youtube.com/watch?v=CcGtDMm1SJA&feature=youtu.be&t=30m15s)
+  - [kproxy: Kernel Proxy](https://lwn.net/Articles/726811/)
+- [Perf ring buffer](https://lwn.net/Articles/388978/)
+- [TLS in the kernel](https://lwn.net/Articles/666509/)
+- [Crypto kernel TLS socket](https://lwn.net/Articles/665602/)
+- [PLAYING WITH KERNEL TLS IN LINUX 4.13 AND GO](https://blog.filippo.io/playing-with-kernel-tls-in-linux-4-13-and-go/)
 
-
-
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----
-
-
+## Reading List
 - [Dive into BPF: a list of reading material](https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/)
 - [How to filter packets super fast: XDP & eBPF!](https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/)
 - [http://brendangregg.com/perf.html#eBPF](http://brendangregg.com/perf.html#eBPF)
-
-
 
 **Notes**
 - This also implies that API users must clear/zero sizeof(bpf_attr), as compiler can size-align the struct differently, to avoid garbage data to be interpreted as parameters by future kernels.
@@ -77,15 +67,6 @@ But over the years, eBPF added the ability to attach to [other kernel objects](h
 
 ## eBPF VM in userspace
 - https://github.com/iovisor/ubpf/
-
-**Tracing syscalls using eBPF using tracepoints**
-- https://github.com/pmem/vltrace
-
-**eBPF with autocomplete**
-- https://ops.tips/blog/developing-ebpf-with-autocompletion-support/
-
-**GRO Engine**
-- https://lwn.net/Articles/358910/
 
 ## BPF: sockmap and sk redirect support
 - John Fastabend: https://lwn.net/Articles/731133/
@@ -147,4 +128,10 @@ https://docs.google.com/a/covalent.io/presentation/d/1dwS...
 
 **Accelerating Linux security with eBPF iptables**
 https://twitter.com/sebymiano/status/1027164445448069120?s=19
+
+**eBPF with autocomplete**
+- https://ops.tips/blog/developing-ebpf-with-autocompletion-support/
+
+**GRO Engine**
+- https://lwn.net/Articles/358910/
 
