@@ -9,6 +9,8 @@ Traditionally, BPF could only be attached to sockets for socket filtering. BPF's
 
 <img src="images/bpf-prog-types.png" width="65%" height="65%">
 
+**Summary Presentation**: - [Toward Flexible and Efficient In-Kernel Network Function Chaining with IOVisor](/papers/18HPSR%20-%20eBPF.pdf)
+
 - [A thorough introduction to eBPF](https://lwn.net/Articles/740157/) 
 - [BPF and XDP Reference Guide](https://github.com/cilium/cilium/blob/master/Documentation/bpf.rst)
 - eBPF maps: Using eBPF maps is a method to keep state between invocations of the eBPF program, and allows sharing data between eBPF kernel programs, and also between kernel and user-space applications.
@@ -53,6 +55,7 @@ Traditionally, BPF could only be attached to sockets for socket filtering. BPF's
 - [PLAYING WITH KERNEL TLS IN LINUX 4.13 AND GO](https://blog.filippo.io/playing-with-kernel-tls-in-linux-4-13-and-go/)
 
 ## Reading List
+- [Further Reading](https://github.com/cilium/cilium/blob/master/Documentation/bpf.rst#further-reading)
 - [Dive into BPF: a list of reading material](https://qmonnet.github.io/whirl-offload/2016/09/01/dive-into-bpf/)
 - [How to filter packets super fast: XDP & eBPF!](https://jvns.ca/blog/2017/04/07/xdp-bpf-tutorial/)
 - [http://brendangregg.com/perf.html#eBPF](http://brendangregg.com/perf.html#eBPF)
